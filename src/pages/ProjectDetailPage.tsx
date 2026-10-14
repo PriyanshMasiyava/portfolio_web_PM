@@ -55,8 +55,7 @@ function DetailIllustration({ slug, alt }: { slug: string; alt: string }) {
   const emoji = illustrationEmoji[slug] ?? '🛠'
   return (
     <div
-      className="w-full h-56 sm:h-72 rounded-xl border border-theme flex flex-col items-center justify-center gap-4 overflow-hidden relative"
-      style={{ background: 'linear-gradient(135deg, #0d1326 0%, #1a2236 100%)' }}
+      className="w-full h-56 sm:h-72 rounded-xl border border-theme bg-theme-card flex flex-col items-center justify-center gap-4 overflow-hidden relative"
       role="img"
       aria-label={alt}
     >

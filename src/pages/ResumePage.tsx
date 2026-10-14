@@ -217,7 +217,7 @@ export default function ResumePage() {
                       </div>
                     </div>
                     {edu.location && (
-                      <p className="flex items-center gap-1 text-xs text-slate-500 mt-0.5">
+                      <p className="flex items-center gap-1 text-xs text-theme-subtle mt-0.5">
                         <MapPin size={11} />
                         {edu.location}
                       </p>
@@ -263,7 +263,7 @@ export default function ResumePage() {
                       <div className="text-right flex-shrink-0">
                         <p className="text-xs text-theme-muted">{exp.duration}</p>
                         {exp.location && (
-                          <p className="flex items-center justify-end gap-1 text-xs text-slate-500 mt-0.5">
+                          <p className="flex items-center justify-end gap-1 text-xs text-theme-subtle mt-0.5">
                             <MapPin size={11} />
                             {exp.location}
                           </p>
@@ -272,7 +272,7 @@ export default function ResumePage() {
                     </div>
                     <ul className="space-y-1.5 ml-0">
                       {exp.responsibilities.map((r, i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs text-slate-300">
+                        <li key={i} className="flex items-start gap-2 text-xs text-theme-secondary">
                           <span className="text-violet-500 flex-shrink-0 mt-1">•</span>
                           {r}
                         </li>
@@ -289,7 +289,7 @@ export default function ResumePage() {
                 <div>
                   <div className="flex items-start justify-between gap-2">
                     <h3 className="text-sm font-semibold text-theme-primary">Expense Tracker Application</h3>
-                    <span className="text-xs text-slate-500 flex-shrink-0">Python · Tkinter · SQLite · Matplotlib</span>
+                    <span className="text-xs text-theme-subtle flex-shrink-0">Python · Tkinter · SQLite · Matplotlib</span>
                   </div>
                   <p className="text-xs text-theme-secondary mt-1 leading-relaxed">
                     GUI-based expense management application with full CRUD operations, SQLite data storage,
@@ -300,7 +300,7 @@ export default function ResumePage() {
                 <div>
                   <div className="flex items-start justify-between gap-2">
                     <h3 className="text-sm font-semibold text-theme-primary">Weather Application</h3>
-                    <span className="text-xs text-slate-500 flex-shrink-0">Python · Tkinter · OpenWeather API</span>
+                    <span className="text-xs text-theme-subtle flex-shrink-0">Python · Tkinter · OpenWeather API</span>
                   </div>
                   <p className="text-xs text-theme-secondary mt-1 leading-relaxed">
                     Desktop weather application fetching real-time data via the OpenWeather API —
