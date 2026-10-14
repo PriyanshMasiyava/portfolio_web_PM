@@ -40,9 +40,10 @@ function CodePanel() {
     <div className="relative w-full max-w-lg mx-auto">
       {/* Glow */}
       <div className="absolute -inset-4 bg-violet-500/10 rounded-2xl blur-xl" />
-      <div className="relative bg-navy-800 border border-slate-700/60 rounded-xl overflow-hidden shadow-2xl shadow-black/40">
+      {/* Code panel always stays dark — it's a decorative code editor illustration */}
+      <div className="relative bg-[#111827] border border-slate-700/60 rounded-xl overflow-hidden shadow-2xl shadow-black/40">
         {/* Title bar */}
-        <div className="flex items-center gap-2 px-4 py-3 bg-navy-900/80 border-b border-slate-700/50">
+        <div className="flex items-center gap-2 px-4 py-3 bg-[#0d1326]/80 border-b border-slate-700/50">
           <div className="w-3 h-3 rounded-full bg-red-500/70" />
           <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
           <div className="w-3 h-3 rounded-full bg-green-500/70" />
@@ -111,7 +112,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden"
+      className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden bg-theme-page"
     >
       {/* Background gradient blobs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -130,26 +131,26 @@ export default function HeroSection() {
 
             {/* Main heading */}
             <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white dark:text-white">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-theme-primary">
                 {profile.name.split(' ')[0]}, I'm{' '}
                 <br className="hidden sm:block" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-teal-400">
                   {profile.name.split(' ').slice(1).join(' ')}
                 </span>
               </h1>
-              <h2 className="text-xl sm:text-2xl font-semibold text-slate-300">
+              <h2 className="text-xl sm:text-2xl font-semibold text-theme-secondary">
                 {profile.tagline}
               </h2>
             </div>
 
             {/* Animated role */}
-            <div className="flex items-center gap-2 text-base sm:text-lg text-slate-400">
+            <div className="flex items-center gap-2 text-base sm:text-lg text-theme-muted">
               <span>Currently a</span>
               <AnimatedRole roles={profile.roles} />
             </div>
 
             {/* Supporting text */}
-            <p className="text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl">
+            <p className="text-theme-muted text-base sm:text-lg leading-relaxed max-w-xl">
               Computer Engineering student passionate about Python development,
               software engineering, and creating practical solutions to
               real-world problems.
@@ -171,7 +172,7 @@ export default function HeroSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub profile"
-                className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors duration-200 text-sm"
+                className="flex items-center gap-2 text-theme-muted hover:text-theme-primary transition-colors duration-200 text-sm"
               >
                 <GithubIcon size={20} />
                 <span className="hidden sm:inline">GitHub</span>
@@ -181,7 +182,7 @@ export default function HeroSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn profile"
-                className="flex items-center gap-2 text-slate-400 hover:text-teal-400 transition-colors duration-200 text-sm"
+                className="flex items-center gap-2 text-theme-muted hover:text-teal-400 transition-colors duration-200 text-sm"
               >
                 <LinkedinIcon size={20} />
                 <span className="hidden sm:inline">LinkedIn</span>
@@ -189,7 +190,7 @@ export default function HeroSection() {
               <a
                 href={`mailto:${profile.contact.email}`}
                 aria-label="Send email"
-                className="flex items-center gap-2 text-slate-400 hover:text-violet-400 transition-colors duration-200 text-sm"
+                className="flex items-center gap-2 text-theme-muted hover:text-violet-400 transition-colors duration-200 text-sm"
               >
                 <Mail size={20} />
                 <span className="hidden sm:inline">Email</span>

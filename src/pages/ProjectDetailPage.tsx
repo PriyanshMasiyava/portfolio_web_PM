@@ -14,14 +14,14 @@ import type { Project } from '../types'
 
 function ProjectNotFound() {
   return (
-    <div className="min-h-screen bg-navy-950 text-white">
+    <div className="min-h-screen bg-theme-page text-theme-primary">
       <Navbar />
       <main className="pt-24 pb-20 flex flex-col items-center justify-center min-h-[70vh] text-center px-4">
-        <div className="w-20 h-20 rounded-2xl bg-navy-800 border border-slate-700/50 flex items-center justify-center text-4xl mb-6">
+        <div className="w-20 h-20 rounded-2xl bg-theme-card border border-theme flex items-center justify-center text-4xl mb-6">
           🔍
         </div>
-        <h1 className="text-3xl font-bold text-white mb-3">Project Not Found</h1>
-        <p className="text-slate-400 max-w-sm leading-relaxed mb-8">
+        <h1 className="text-3xl font-bold text-theme-primary mb-3">Project Not Found</h1>
+        <p className="text-theme-muted max-w-sm leading-relaxed mb-8">
           The project you're looking for doesn't exist or the URL may have changed.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
@@ -55,7 +55,8 @@ function DetailIllustration({ slug, alt }: { slug: string; alt: string }) {
   const emoji = illustrationEmoji[slug] ?? '🛠'
   return (
     <div
-      className="w-full h-56 sm:h-72 rounded-xl bg-gradient-to-br from-navy-900 to-navy-700 border border-slate-700/50 flex flex-col items-center justify-center gap-4 overflow-hidden relative"
+      className="w-full h-56 sm:h-72 rounded-xl border border-theme flex flex-col items-center justify-center gap-4 overflow-hidden relative"
+      style={{ background: 'linear-gradient(135deg, #0d1326 0%, #1a2236 100%)' }}
       role="img"
       aria-label={alt}
     >
@@ -71,7 +72,7 @@ function DetailIllustration({ slug, alt }: { slug: string; alt: string }) {
         <div className="w-20 h-20 rounded-2xl bg-violet-500/20 border border-violet-500/40 flex items-center justify-center text-4xl">
           {emoji}
         </div>
-        <p className="text-xs text-slate-500 font-mono">{alt}</p>
+        <p className="text-xs text-theme-subtle font-mono">{alt}</p>
       </div>
     </div>
   )
@@ -106,7 +107,7 @@ function ProjectDetailContent({ project }: { project: Project }) {
   const related = getRelatedProjects(project.slug, 3)
 
   return (
-    <div className="min-h-screen bg-navy-950 dark:bg-navy-950 text-white">
+    <div className="min-h-screen bg-theme-page text-theme-primary">
       <SEOHead
         type="webpage"
         pageName={meta.title}
@@ -120,11 +121,11 @@ function ProjectDetailContent({ project }: { project: Project }) {
 
           {/* ── Breadcrumb ───────────────────────────────────────────────── */}
           <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
+            <ol className="flex flex-wrap items-center gap-2 text-xs text-theme-subtle">
               <li>
                 <Link
                   to="/"
-                  className="hover:text-slate-300 transition-colors focus:outline-none focus:ring-1 focus:ring-violet-500 rounded"
+                  className="hover:text-theme-secondary transition-colors focus:outline-none focus:ring-1 focus:ring-violet-500 rounded"
                 >
                   Home
                 </Link>
@@ -135,7 +136,7 @@ function ProjectDetailContent({ project }: { project: Project }) {
               <li>
                 <Link
                   to="/projects"
-                  className="hover:text-slate-300 transition-colors focus:outline-none focus:ring-1 focus:ring-violet-500 rounded"
+                  className="hover:text-theme-secondary transition-colors focus:outline-none focus:ring-1 focus:ring-violet-500 rounded"
                 >
                   Projects
                 </Link>
@@ -143,7 +144,7 @@ function ProjectDetailContent({ project }: { project: Project }) {
               <li aria-hidden>
                 <ChevronRight size={12} />
               </li>
-              <li className="text-slate-300 truncate max-w-[200px]" aria-current="page">
+              <li className="text-theme-secondary truncate max-w-[200px]" aria-current="page">
                 {project.title}
               </li>
             </ol>
@@ -157,15 +158,15 @@ function ProjectDetailContent({ project }: { project: Project }) {
               </span>
               <StatusBadge status={project.status} />
               {project.completionDate && (
-                <span className="text-xs text-slate-500">{project.completionDate}</span>
+                <span className="text-xs text-theme-subtle">{project.completionDate}</span>
               )}
             </div>
 
-            <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
+            <h1 className="text-3xl sm:text-4xl font-bold text-theme-primary leading-tight mb-4">
               {project.title}
             </h1>
 
-            <p className="text-slate-300 text-lg leading-relaxed">
+            <p className="text-theme-secondary text-lg leading-relaxed">
               {project.shortDescription}
             </p>
 
@@ -196,7 +197,7 @@ function ProjectDetailContent({ project }: { project: Project }) {
                 </a>
               )}
               {!project.githubUrl && !project.liveDemoUrl && (
-                <span className="text-sm text-slate-500 italic">
+                <span className="text-sm text-theme-subtle italic">
                   Repository link not available
                 </span>
               )}
@@ -214,24 +215,24 @@ function ProjectDetailContent({ project }: { project: Project }) {
 
               {/* About */}
               <section aria-labelledby="about-heading">
-                <h2 id="about-heading" className="flex items-center gap-2 text-xl font-bold text-white mb-4">
+                <h2 id="about-heading" className="flex items-center gap-2 text-xl font-bold text-theme-primary mb-4">
                   <BookOpen size={20} className="text-violet-400" />
                   About This Project
                 </h2>
-                <p className="text-slate-300 leading-relaxed">
+                <p className="text-theme-secondary leading-relaxed">
                   {project.fullDescription}
                 </p>
               </section>
 
               {/* Features */}
               <section aria-labelledby="features-heading">
-                <h2 id="features-heading" className="flex items-center gap-2 text-xl font-bold text-white mb-4">
+                <h2 id="features-heading" className="flex items-center gap-2 text-xl font-bold text-theme-primary mb-4">
                   <CheckCircle2 size={20} className="text-teal-400" />
                   Key Features
                 </h2>
                 <ul className="space-y-3">
                   {project.features.map((feat, i) => (
-                    <li key={i} className="flex items-start gap-3 text-slate-300">
+                    <li key={i} className="flex items-start gap-3 text-theme-secondary">
                       <CheckCircle2 size={16} className="text-teal-400 flex-shrink-0 mt-0.5" />
                       {feat}
                     </li>
@@ -242,13 +243,13 @@ function ProjectDetailContent({ project }: { project: Project }) {
               {/* Challenges */}
               {project.challenges && project.challenges.length > 0 && (
                 <section aria-labelledby="challenges-heading">
-                  <h2 id="challenges-heading" className="flex items-center gap-2 text-xl font-bold text-white mb-4">
+                  <h2 id="challenges-heading" className="flex items-center gap-2 text-xl font-bold text-theme-primary mb-4">
                     <Zap size={20} className="text-amber-400" />
                     Challenges
                   </h2>
                   <ul className="space-y-3">
                     {project.challenges.map((c, i) => (
-                      <li key={i} className="flex items-start gap-3 text-slate-300">
+                      <li key={i} className="flex items-start gap-3 text-theme-secondary">
                         <span className="flex-shrink-0 w-5 h-5 rounded-full bg-amber-400/15 border border-amber-400/30 flex items-center justify-center text-amber-400 text-xs font-bold mt-0.5">
                           {i + 1}
                         </span>
@@ -262,14 +263,14 @@ function ProjectDetailContent({ project }: { project: Project }) {
               {/* Learnings */}
               {project.learnings && project.learnings.length > 0 && (
                 <section aria-labelledby="learnings-heading">
-                  <h2 id="learnings-heading" className="flex items-center gap-2 text-xl font-bold text-white mb-4">
+                  <h2 id="learnings-heading" className="flex items-center gap-2 text-xl font-bold text-theme-primary mb-4">
                     <Lightbulb size={20} className="text-violet-400" />
                     What I Learned
                   </h2>
                   <ul className="space-y-3">
                     {project.learnings.map((l, i) => (
-                      <li key={i} className="flex items-start gap-3 text-slate-300">
-                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-violet-500/15 border border-violet-500/30 flex items-center justify-center text-violet-300 text-xs font-bold mt-0.5">
+                      <li key={i} className="flex items-start gap-3 text-theme-secondary">
+                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-violet-500/15 border border-violet-500/30 flex items-center justify-center text-violet-400 text-xs font-bold mt-0.5">
                           {i + 1}
                         </span>
                         {l}
@@ -285,7 +286,7 @@ function ProjectDetailContent({ project }: { project: Project }) {
 
               {/* Technology Stack */}
               <div className="card-base">
-                <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-4">
+                <h3 className="text-sm font-semibold text-theme-muted uppercase tracking-wider mb-4">
                   Technology Stack
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -300,14 +301,14 @@ function ProjectDetailContent({ project }: { project: Project }) {
               {/* Tags */}
               {project.tags.length > 0 && (
                 <div className="card-base">
-                  <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-4">
+                  <h3 className="text-sm font-semibold text-theme-muted uppercase tracking-wider mb-4">
                     Tags
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map(tag => (
                       <span
                         key={tag}
-                        className="text-xs px-2.5 py-1 rounded-full bg-navy-700 border border-slate-700/60 text-slate-400"
+                        className="text-xs px-2.5 py-1 rounded-full bg-theme-card border border-theme text-theme-muted"
                       >
                         #{tag}
                       </span>
@@ -319,7 +320,7 @@ function ProjectDetailContent({ project }: { project: Project }) {
               {/* Repository */}
               {project.githubUrl && (
                 <div className="card-base">
-                  <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-4">
+                  <h3 className="text-sm font-semibold text-theme-muted uppercase tracking-wider mb-4">
                     Repository
                   </h3>
                   <a
@@ -338,24 +339,24 @@ function ProjectDetailContent({ project }: { project: Project }) {
 
               {/* Status card */}
               <div className="card-base">
-                <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-3">
+                <h3 className="text-sm font-semibold text-theme-muted uppercase tracking-wider mb-3">
                   Project Info
                 </h3>
                 <dl className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <dt className="text-slate-500">Status</dt>
+                    <dt className="text-theme-subtle">Status</dt>
                     <dd>
                       <StatusBadge status={project.status} />
                     </dd>
                   </div>
                   <div className="flex justify-between">
-                    <dt className="text-slate-500">Category</dt>
-                    <dd className="text-slate-300">{project.category}</dd>
+                    <dt className="text-theme-subtle">Category</dt>
+                    <dd className="text-theme-secondary">{project.category}</dd>
                   </div>
                   {project.completionDate && (
                     <div className="flex justify-between">
-                      <dt className="text-slate-500">Year</dt>
-                      <dd className="text-slate-300">{project.completionDate}</dd>
+                      <dt className="text-theme-subtle">Year</dt>
+                      <dd className="text-theme-secondary">{project.completionDate}</dd>
                     </div>
                   )}
                 </dl>
@@ -366,7 +367,7 @@ function ProjectDetailContent({ project }: { project: Project }) {
           {/* ── Related Projects ──────────────────────────────────────────── */}
           {related.length > 0 && (
             <section className="mt-16" aria-labelledby="related-heading">
-              <h2 id="related-heading" className="text-2xl font-bold text-white mb-6">
+              <h2 id="related-heading" className="text-2xl font-bold text-theme-primary mb-6">
                 Related Projects
               </h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -378,10 +379,10 @@ function ProjectDetailContent({ project }: { project: Project }) {
           )}
 
           {/* ── Navigation ───────────────────────────────────────────────── */}
-          <div className="flex items-center justify-between mt-12 pt-8 border-t border-slate-800/60">
+          <div className="flex items-center justify-between mt-12 pt-8 border-t border-theme">
             <Link
               to="/projects"
-              className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-violet-500 rounded"
+              className="flex items-center gap-2 text-sm text-theme-muted hover:text-theme-primary transition-colors focus:outline-none focus:ring-2 focus:ring-violet-500 rounded"
               aria-label="Back to all projects"
             >
               <ArrowLeft size={15} />
@@ -389,7 +390,7 @@ function ProjectDetailContent({ project }: { project: Project }) {
             </Link>
             <Link
               to="/#projects"
-              className="flex items-center gap-2 text-sm text-slate-400 hover:text-violet-400 transition-colors focus:outline-none focus:ring-2 focus:ring-violet-500 rounded"
+              className="flex items-center gap-2 text-sm text-theme-muted hover:text-violet-400 transition-colors focus:outline-none focus:ring-2 focus:ring-violet-500 rounded"
               aria-label="View featured projects on homepage"
             >
               Featured Projects

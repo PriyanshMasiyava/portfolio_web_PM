@@ -30,8 +30,8 @@ function FilterPill({
       onClick={onClick}
       className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500 whitespace-nowrap ${
         active
-          ? 'bg-violet-500/20 border-violet-500/60 text-violet-300'
-          : 'bg-navy-800 border-slate-700/50 text-slate-400 hover:border-violet-500/40 hover:text-slate-300'
+          ? 'bg-violet-500/20 border-violet-500/60 text-violet-400'
+          : 'bg-theme-card border-theme text-theme-muted hover:border-violet-500/40 hover:text-theme-secondary'
       }`}
       aria-pressed={active}
     >
@@ -47,7 +47,7 @@ function FeaturedBanner() {
   if (!hero) return null
 
   return (
-    <div className="relative rounded-2xl border border-violet-500/40 bg-gradient-to-br from-navy-800 via-navy-800 to-navy-900 overflow-hidden mb-12 group hover:border-violet-400/60 transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/10">
+    <div className="relative rounded-2xl border border-violet-500/40 bg-theme-card overflow-hidden mb-12 group hover:border-violet-400/60 transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/10">
       {/* Top accent stripe */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
 
@@ -63,8 +63,8 @@ function FeaturedBanner() {
           <div className="flex-1 space-y-4">
             {/* Badges */}
             <div className="flex flex-wrap items-center gap-2">
-              <span className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-violet-500/20 border border-violet-500/50 text-violet-300">
-                <Star size={11} className="fill-violet-300" aria-hidden="true" />
+              <span className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-violet-500/20 border border-violet-500/50 text-violet-400">
+                <Star size={11} className="fill-violet-400" aria-hidden="true" />
                 Featured Project
               </span>
               <span className="text-xs font-medium px-3 py-1 rounded-full bg-teal-400/10 border border-teal-400/30 text-teal-400">
@@ -76,12 +76,12 @@ function FeaturedBanner() {
             </div>
 
             {/* Title */}
-            <h2 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-violet-200 transition-colors duration-200 leading-tight">
+            <h2 className="text-2xl sm:text-3xl font-bold text-theme-primary group-hover:text-violet-400 transition-colors duration-200 leading-tight">
               {hero.title}
             </h2>
 
             {/* Description */}
-            <p className="text-slate-300 leading-relaxed max-w-xl text-sm sm:text-base">
+            <p className="text-theme-secondary leading-relaxed max-w-xl text-sm sm:text-base">
               {hero.shortDescription}
             </p>
 
@@ -118,13 +118,13 @@ function FeaturedBanner() {
           </div>
 
           {/* Right: visual accent */}
-          <div className="flex-shrink-0 w-full sm:w-36 h-32 sm:h-36 rounded-xl bg-navy-950/60 border border-slate-700/40 flex flex-col items-center justify-center gap-3">
+          <div className="flex-shrink-0 w-full sm:w-36 h-32 sm:h-36 rounded-xl bg-theme-page border border-theme flex flex-col items-center justify-center gap-3">
             <div className="w-14 h-14 rounded-2xl bg-violet-500/20 border border-violet-500/40 flex items-center justify-center text-3xl">
               🐍
             </div>
             <div className="text-center">
-              <p className="text-xs font-semibold text-violet-300">Community</p>
-              <p className="text-xs text-slate-500">Python · Open Source</p>
+              <p className="text-xs font-semibold text-violet-400">Community</p>
+              <p className="text-xs text-theme-subtle">Python · Open Source</p>
             </div>
           </div>
         </div>
@@ -225,7 +225,7 @@ export default function ProjectsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-navy-950 dark:bg-navy-950 text-white">
+    <div className="min-h-screen bg-theme-page text-theme-primary">
       <SEOHead
         type="webpage"
         pageName={pageMeta.projects.title}
@@ -240,24 +240,24 @@ export default function ProjectsPage() {
           {/* ── Page Header ──────────────────────────────────────────────── */}
           <header className="mb-12">
             <nav aria-label="Breadcrumb" className="mb-4">
-              <ol className="flex items-center gap-2 text-xs text-slate-500">
+              <ol className="flex items-center gap-2 text-xs text-theme-subtle">
                 <li>
-                  <Link to="/" className="hover:text-slate-300 transition-colors focus:outline-none focus:ring-1 focus:ring-violet-500 rounded">
+                  <Link to="/" className="hover:text-theme-secondary transition-colors focus:outline-none focus:ring-1 focus:ring-violet-500 rounded">
                     Home
                   </Link>
                 </li>
                 <li aria-hidden>/</li>
-                <li className="text-slate-300" aria-current="page">Projects</li>
+                <li className="text-theme-secondary" aria-current="page">Projects</li>
               </ol>
             </nav>
             <p className="text-violet-400 text-sm font-semibold tracking-widest uppercase mb-2">
               Portfolio
             </p>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-theme-primary leading-tight">
               Projects Built with{' '}
               <span className="accent-text">Curiosity and Code</span>
             </h1>
-            <p className="mt-4 text-slate-400 max-w-2xl leading-relaxed">
+            <p className="mt-4 text-theme-muted max-w-2xl leading-relaxed">
               A showcase of Python desktop applications, open-source community initiatives, and
               web development projects — each built to solve real problems and grow skills along
               the way.
@@ -275,7 +275,7 @@ export default function ProjectsPage() {
               <div className="relative flex-1">
                 <Search
                   size={16}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 text-theme-subtle pointer-events-none"
                   aria-hidden="true"
                 />
                 <input
@@ -289,7 +289,7 @@ export default function ProjectsPage() {
                 {query && (
                   <button
                     onClick={() => setQuery('')}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors focus:outline-none"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-theme-subtle hover:text-theme-primary transition-colors focus:outline-none"
                     aria-label="Clear search"
                   >
                     <X size={15} />
@@ -312,7 +312,7 @@ export default function ProjectsPage() {
                 </select>
                 <ChevronDown
                   size={14}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-theme-subtle pointer-events-none"
                   aria-hidden="true"
                 />
               </div>
@@ -322,8 +322,8 @@ export default function ProjectsPage() {
                 onClick={() => setShowTechFilter(prev => !prev)}
                 className={`flex items-center gap-2 px-4 py-3 rounded-lg border text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500 ${
                   showTechFilter || activeTechs.length > 0
-                    ? 'border-violet-500/60 text-violet-300 bg-violet-500/10'
-                    : 'border-slate-700/60 text-slate-400 hover:border-slate-600 hover:text-slate-300 bg-navy-700'
+                    ? 'border-violet-500/60 text-violet-400 bg-violet-500/10'
+                    : 'border-theme text-theme-muted hover:border-violet-500/40 hover:text-theme-secondary bg-theme-card'
                 }`}
                 aria-expanded={showTechFilter}
                 aria-label="Toggle technology filters"
@@ -353,11 +353,11 @@ export default function ProjectsPage() {
             {/* Technology pills (collapsible) */}
             {showTechFilter && (
               <div
-                className="p-4 rounded-xl bg-navy-800 border border-slate-700/50"
+                className="p-4 rounded-xl bg-theme-card border border-theme"
                 role="group"
                 aria-label="Filter by technology"
               >
-                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
+                <p className="text-xs font-semibold text-theme-muted uppercase tracking-wider mb-3">
                   Filter by Technology
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -376,7 +376,7 @@ export default function ProjectsPage() {
 
           {/* ── Results bar ───────────────────────────────────────────────── */}
           <div className="flex items-center justify-between mb-6">
-            <p className="text-sm text-slate-400" aria-live="polite" aria-atomic="true">
+            <p className="text-sm text-theme-muted" aria-live="polite" aria-atomic="true">
               {filtered.length === 0
                 ? 'No projects found'
                 : filtered.length === 1
@@ -406,11 +406,11 @@ export default function ProjectsPage() {
           ) : (
             /* Empty state */
             <div className="flex flex-col items-center justify-center py-24 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-navy-800 border border-slate-700/50 flex items-center justify-center text-3xl mb-4">
+              <div className="w-16 h-16 rounded-2xl bg-theme-card border border-theme flex items-center justify-center text-3xl mb-4">
                 🔍
               </div>
-              <h2 className="text-lg font-semibold text-white mb-2">No projects found</h2>
-              <p className="text-slate-400 text-sm max-w-sm leading-relaxed">
+              <h2 className="text-lg font-semibold text-theme-primary mb-2">No projects found</h2>
+              <p className="text-theme-muted text-sm max-w-sm leading-relaxed">
                 No projects match your search. Try another keyword or clear the filters.
               </p>
               <button
@@ -425,10 +425,10 @@ export default function ProjectsPage() {
           )}
 
           {/* ── Back to Home ──────────────────────────────────────────────── */}
-          <div className="text-center mt-16 pt-8 border-t border-slate-800/60">
+          <div className="text-center mt-16 pt-8 border-t border-theme">
             <Link
               to="/"
-              className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-violet-500 rounded"
+              className="inline-flex items-center gap-2 text-sm text-theme-muted hover:text-theme-primary transition-colors focus:outline-none focus:ring-2 focus:ring-violet-500 rounded"
               aria-label="Back to homepage"
             >
               ← Back to Home

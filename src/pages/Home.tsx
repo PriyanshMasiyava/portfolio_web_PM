@@ -16,7 +16,7 @@ export default function Home() {
   useSEO(pageMeta.home)
 
   return (
-    <div className="min-h-screen bg-navy-950 dark:bg-navy-950 text-white">
+    <div className="min-h-screen bg-theme-page text-theme-primary">
       {/* Both Person and WebSite schemas on the homepage */}
       <SEOHead type="person" />
       <SEOHead type="website" />

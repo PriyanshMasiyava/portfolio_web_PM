@@ -13,14 +13,14 @@ import { pageMeta } from './lib/seo'
 function NotFoundPage() {
   useSEO(pageMeta.notFound)
   return (
-    <div className="min-h-screen bg-navy-950 text-white">
+    <div className="min-h-screen bg-theme-page text-theme-primary">
       <Navbar />
       <main className="pt-24 pb-20 flex flex-col items-center justify-center min-h-[70vh] text-center px-4">
-        <div className="w-20 h-20 rounded-2xl bg-navy-800 border border-slate-700/50 flex items-center justify-center text-4xl mb-6">
+        <div className="w-20 h-20 rounded-2xl bg-theme-card border border-theme flex items-center justify-center text-4xl mb-6">
           404
         </div>
-        <h1 className="text-3xl font-bold text-white mb-3">Page Not Found</h1>
-        <p className="text-slate-400 max-w-sm leading-relaxed mb-8">
+        <h1 className="text-3xl font-bold text-theme-primary mb-3">Page Not Found</h1>
+        <p className="text-theme-muted max-w-sm leading-relaxed mb-8">
           The page you're looking for doesn't exist or the URL may have changed.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">

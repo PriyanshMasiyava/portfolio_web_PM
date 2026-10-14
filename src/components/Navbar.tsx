@@ -4,10 +4,9 @@ import { Link, useLocation } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
 
 // ─── NavLink ──────────────────────────────────────────────────────────────────
-// Defined outside Navbar so React sees a stable component identity across renders.
 
 const linkClass =
-  'px-3 py-2 text-sm text-slate-400 hover:text-white rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500'
+  'px-3 py-2 text-sm text-theme-muted hover:text-theme-primary rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500'
 
 function NavLink({
   label,
@@ -39,7 +38,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
 
-  // true when we are on the homepage
   const isHome = location.pathname === '/'
 
   useEffect(() => {
@@ -50,7 +48,6 @@ export default function Navbar() {
 
   const handleNavClick = () => setMenuOpen(false)
 
-  // On the homepage use anchor links; on all other pages use full route paths
   function navTo(anchor: string, fullPath: string) {
     return isHome ? anchor : fullPath
   }
@@ -70,7 +67,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-navy-950/95 dark:bg-navy-950/95 backdrop-blur-md border-b border-slate-800/60 shadow-lg shadow-black/20'
+          ? 'bg-theme-nav backdrop-blur-md border-b border-theme shadow-lg shadow-black/20'
           : 'bg-transparent'
       }`}
     >
@@ -85,7 +82,7 @@ export default function Navbar() {
             <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-violet-500/20 border border-violet-500/40 group-hover:bg-violet-500/30 transition-all duration-200">
               <Code2 size={18} className="text-violet-400" />
             </div>
-            <span className="font-bold text-white dark:text-white text-sm hidden sm:block">
+            <span className="font-bold text-theme-primary text-sm hidden sm:block">
               PM
             </span>
           </Link>
@@ -106,19 +103,18 @@ export default function Navbar() {
               to="/resume"
               className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-lg
                          bg-violet-500 hover:bg-violet-600 text-white transition-all duration-200
-                         focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-navy-950"
+                         focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
               aria-label="View resume"
             >
               <Download size={15} />
               Resume
             </Link>
-            {/* Mobile hamburger */}
             <button
               onClick={() => setMenuOpen(prev => !prev)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
-              className="lg:hidden p-2 rounded-lg border border-slate-700/60 text-slate-400 hover:text-white
-                         hover:border-slate-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500"
+              className="lg:hidden p-2 rounded-lg border border-theme text-theme-muted hover:text-theme-primary
+                         hover:border-violet-500/50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500"
             >
               {menuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -128,12 +124,12 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       {menuOpen && (
-        <div className="lg:hidden bg-navy-950/98 backdrop-blur-md border-b border-slate-800/60">
+        <div className="lg:hidden bg-theme-nav backdrop-blur-md border-b border-theme">
           <div className="section-container py-4 flex flex-col gap-1">
             {navLinks.map(link => (
               <NavLink key={link.label} label={link.label} to={link.to} onClick={handleNavClick} />
             ))}
-            <div className="pt-2 border-t border-slate-800">
+            <div className="pt-2 border-t border-theme">
               <Link
                 to="/resume"
                 onClick={handleNavClick}

@@ -10,7 +10,7 @@ function FeaturedHeroCard() {
   const hero = featuredProjects[0]
   if (!hero) return null
   return (
-    <div className="relative rounded-2xl border border-violet-500/40 bg-gradient-to-br from-navy-800 via-navy-800 to-navy-900 overflow-hidden mb-12 group hover:border-violet-400/60 transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/10">
+    <div className="relative rounded-2xl border border-violet-500/40 bg-theme-card overflow-hidden mb-12 group hover:border-violet-400/60 transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/10">
       {/* Decorative gradient stripe */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-violet-500 via-teal-400 to-violet-500" />
 
@@ -38,12 +38,12 @@ function FeaturedHeroCard() {
             </div>
 
             {/* Title */}
-            <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-violet-200 transition-colors duration-200 leading-tight">
+            <h3 className="text-2xl sm:text-3xl font-bold text-theme-primary group-hover:text-violet-400 transition-colors duration-200 leading-tight">
               {hero.title}
             </h3>
 
             {/* Description */}
-            <p className="text-slate-300 leading-relaxed max-w-xl">
+            <p className="text-theme-secondary leading-relaxed max-w-xl">
               {hero.shortDescription}
             </p>
 
@@ -80,13 +80,13 @@ function FeaturedHeroCard() {
           </div>
 
           {/* Right: Visual */}
-          <div className="flex-shrink-0 w-full sm:w-40 h-36 sm:h-40 rounded-xl bg-navy-950/60 border border-slate-700/40 flex flex-col items-center justify-center gap-3">
+          <div className="flex-shrink-0 w-full sm:w-40 h-36 sm:h-40 rounded-xl bg-theme-page border border-theme flex flex-col items-center justify-center gap-3">
             <div className="w-16 h-16 rounded-2xl bg-violet-500/20 border border-violet-500/40 flex items-center justify-center text-3xl">
               🐍
             </div>
             <div className="text-center">
-              <p className="text-xs font-semibold text-violet-300">Community</p>
-              <p className="text-xs text-slate-500">Python · Open Source</p>
+              <p className="text-xs font-semibold text-violet-400">Community</p>
+              <p className="text-xs text-theme-subtle">Python · Open Source</p>
             </div>
           </div>
         </div>
@@ -102,17 +102,17 @@ export default function FeaturedProjects() {
   const otherFeatured = featuredProjects.slice(1)
 
   return (
-    <section id="projects" className="py-20 bg-navy-900 dark:bg-navy-900">
+    <section id="projects" className="py-20 bg-theme-section-alt">
       <div className="section-container">
         {/* Heading */}
         <div className="mb-12 text-center">
           <p className="text-violet-400 text-sm font-semibold tracking-widest uppercase mb-2">
             What I've Built
           </p>
-          <h2 className="section-heading text-white dark:text-white">
+          <h2 className="section-heading text-theme-primary">
             Featured <span className="accent-text">Projects</span>
           </h2>
-          <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
+          <p className="mt-4 text-theme-muted max-w-2xl mx-auto">
             A collection of Python applications and open-source initiatives — built with curiosity,
             real-world utility, and clean code at the core.
           </p>

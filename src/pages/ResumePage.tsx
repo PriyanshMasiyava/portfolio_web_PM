@@ -46,7 +46,7 @@ function ResumeSection({
 }) {
   return (
     <section className="mb-6 print-section">
-      <h2 className="print-section-title text-xs font-bold uppercase tracking-widest text-violet-400 print:text-slate-600 border-b border-slate-700/50 pb-1.5 mb-4">
+      <h2 className="print-section-title text-xs font-bold uppercase tracking-widest text-violet-400 print:text-slate-600 border-b border-theme pb-1.5 mb-4">
         {title}
       </h2>
       {children}
@@ -73,7 +73,7 @@ export default function ResumePage() {
       />
       <style>{PRINT_STYLES}</style>
 
-      <div className="min-h-screen bg-navy-950 text-white">
+      <div className="min-h-screen bg-theme-page text-theme-primary">
         {/* Navbar — hidden on print */}
         <div className="no-print">
           <Navbar />
@@ -83,21 +83,21 @@ export default function ResumePage() {
         <div className="no-print pt-24 pb-6">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <nav aria-label="Breadcrumb" className="mb-4">
-              <ol className="flex items-center gap-2 text-xs text-slate-500">
+              <ol className="flex items-center gap-2 text-xs text-theme-subtle">
                 <li>
-                  <Link to="/" className="hover:text-slate-300 transition-colors focus:outline-none focus:ring-1 focus:ring-violet-500 rounded">
+                  <Link to="/" className="hover:text-theme-secondary transition-colors focus:outline-none focus:ring-1 focus:ring-violet-500 rounded">
                     Home
                   </Link>
                 </li>
                 <li aria-hidden>/</li>
-                <li className="text-slate-300" aria-current="page">Resume</li>
+                <li className="text-theme-secondary" aria-current="page">Resume</li>
               </ol>
             </nav>
 
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
-                <h1 className="text-2xl font-bold text-white">Resume</h1>
-                <p className="text-sm text-slate-400 mt-1">
+                <h1 className="text-2xl font-bold text-theme-primary">Resume</h1>
+                <p className="text-sm text-theme-muted mt-1">
                   Print or save as PDF using your browser's print dialog (File → Print → Save as PDF).
                 </p>
               </div>
@@ -126,22 +126,22 @@ export default function ResumePage() {
         {/* ── Resume document ────────────────────────────────────────────── */}
         <main className="max-w-3xl mx-auto px-4 sm:px-6 pb-20 print:pb-0">
           <div
-            className="print-page bg-navy-800 border border-slate-700/40 rounded-2xl p-8 sm:p-10 shadow-xl shadow-black/30"
+            className="print-page bg-theme-card border border-theme rounded-2xl p-8 sm:p-10 shadow-xl shadow-black/30"
             role="document"
             aria-label="Priyansh Masiyava resume"
           >
 
             {/* ── Header ─────────────────────────────────────────────── */}
-            <header className="mb-8 pb-6 border-b border-slate-700/50">
+            <header className="mb-8 pb-6 border-b border-theme">
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                 <div>
-                  <h1 className="text-3xl font-extrabold text-white tracking-tight">
+                  <h1 className="text-3xl font-extrabold text-theme-primary tracking-tight">
                     {profile.name}
                   </h1>
                   <p className="text-violet-400 font-semibold mt-1">
                     Computer Engineering Student · Python Developer
                   </p>
-                  <p className="text-sm text-slate-400 mt-2 max-w-lg leading-relaxed">
+                  <p className="text-sm text-theme-muted mt-2 max-w-lg leading-relaxed">
                     {profile.summary}
                   </p>
                 </div>
@@ -151,7 +151,7 @@ export default function ResumePage() {
               <div className="flex flex-wrap gap-x-5 gap-y-2 mt-5 text-sm">
                 <a
                   href={`mailto:${profile.contact.email}`}
-                  className="flex items-center gap-1.5 text-slate-300 hover:text-violet-300 transition-colors"
+                  className="flex items-center gap-1.5 text-theme-secondary hover:text-violet-400 transition-colors"
                   aria-label={`Email: ${profile.contact.email}`}
                 >
                   <Mail size={13} className="text-violet-400 flex-shrink-0" />
@@ -159,7 +159,7 @@ export default function ResumePage() {
                 </a>
                 <a
                   href={`tel:${profile.contact.phone.replace(/\s/g, '')}`}
-                  className="flex items-center gap-1.5 text-slate-300 hover:text-violet-300 transition-colors"
+                  className="flex items-center gap-1.5 text-theme-secondary hover:text-violet-400 transition-colors"
                   aria-label={`Phone: ${profile.contact.phone}`}
                 >
                   <Phone size={13} className="text-violet-400 flex-shrink-0" />
@@ -169,23 +169,23 @@ export default function ResumePage() {
                   href={profile.contact.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-slate-300 hover:text-teal-300 transition-colors"
+                  className="flex items-center gap-1.5 text-theme-secondary hover:text-teal-400 transition-colors"
                   aria-label="LinkedIn profile (opens in new tab)"
                 >
                   <LinkedinIcon size={13} className="text-teal-400 flex-shrink-0" />
                   linkedin.com/in/priyansh-masiyava
-                  <ExternalLink size={11} className="text-slate-600" aria-hidden="true" />
+                  <ExternalLink size={11} className="text-theme-subtle" aria-hidden="true" />
                 </a>
                 <a
                   href={profile.contact.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors"
+                  className="flex items-center gap-1.5 text-theme-secondary hover:text-theme-primary transition-colors"
                   aria-label="GitHub profile (opens in new tab)"
                 >
                   <GithubIcon size={13} className="flex-shrink-0" />
                   github.com/PriyanshMasiyava
-                  <ExternalLink size={11} className="text-slate-600" aria-hidden="true" />
+                  <ExternalLink size={11} className="text-theme-subtle" aria-hidden="true" />
                 </a>
               </div>
             </header>
@@ -197,11 +197,11 @@ export default function ResumePage() {
                   <div key={edu.id}>
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-0.5">
                       <div>
-                        <h3 className="text-sm font-semibold text-white">{edu.degree}</h3>
-                        <p className="text-sm text-slate-300">{edu.institution}</p>
+                        <h3 className="text-sm font-semibold text-theme-primary">{edu.degree}</h3>
+                        <p className="text-sm text-theme-secondary">{edu.institution}</p>
                       </div>
                       <div className="text-right flex-shrink-0">
-                        <p className="text-xs text-slate-400">{edu.duration}</p>
+                        <p className="text-xs text-theme-muted">{edu.duration}</p>
                         {edu.cgpa && (
                           <p className="text-xs text-teal-400 font-medium">CGPA: {edu.cgpa}</p>
                         )}
@@ -232,14 +232,14 @@ export default function ResumePage() {
               <div className="space-y-3">
                 {skillCategories.map(cat => (
                   <div key={cat.category} className="flex flex-col sm:flex-row sm:gap-3">
-                    <dt className="text-xs font-semibold text-slate-400 sm:w-44 flex-shrink-0 mb-1 sm:mb-0 sm:pt-0.5">
+                    <dt className="text-xs font-semibold text-theme-muted sm:w-44 flex-shrink-0 mb-1 sm:mb-0 sm:pt-0.5">
                       {cat.category}
                     </dt>
                     <dd className="flex flex-wrap gap-1.5">
                       {cat.skills.map(skill => (
                         <span
                           key={skill}
-                          className="text-xs px-2 py-0.5 rounded-full bg-navy-700 border border-slate-700/60 text-slate-300"
+                          className="text-xs px-2 py-0.5 rounded-full bg-theme-card border border-theme text-theme-secondary"
                         >
                           {skill}
                         </span>
@@ -257,11 +257,11 @@ export default function ResumePage() {
                   <div key={exp.id}>
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-0.5 mb-2">
                       <div>
-                        <h3 className="text-sm font-semibold text-white">{exp.role}</h3>
+                        <h3 className="text-sm font-semibold text-theme-primary">{exp.role}</h3>
                         <p className="text-sm text-violet-400">{exp.company}</p>
                       </div>
                       <div className="text-right flex-shrink-0">
-                        <p className="text-xs text-slate-400">{exp.duration}</p>
+                        <p className="text-xs text-theme-muted">{exp.duration}</p>
                         {exp.location && (
                           <p className="flex items-center justify-end gap-1 text-xs text-slate-500 mt-0.5">
                             <MapPin size={11} />
@@ -288,10 +288,10 @@ export default function ResumePage() {
               <div className="space-y-4">
                 <div>
                   <div className="flex items-start justify-between gap-2">
-                    <h3 className="text-sm font-semibold text-white">Expense Tracker Application</h3>
+                    <h3 className="text-sm font-semibold text-theme-primary">Expense Tracker Application</h3>
                     <span className="text-xs text-slate-500 flex-shrink-0">Python · Tkinter · SQLite · Matplotlib</span>
                   </div>
-                  <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                  <p className="text-xs text-theme-secondary mt-1 leading-relaxed">
                     GUI-based expense management application with full CRUD operations, SQLite data storage,
                     search and filtering, CSV/PDF export, and Matplotlib bar-chart visualization.
                   </p>
@@ -299,10 +299,10 @@ export default function ResumePage() {
 
                 <div>
                   <div className="flex items-start justify-between gap-2">
-                    <h3 className="text-sm font-semibold text-white">Weather Application</h3>
+                    <h3 className="text-sm font-semibold text-theme-primary">Weather Application</h3>
                     <span className="text-xs text-slate-500 flex-shrink-0">Python · Tkinter · OpenWeather API</span>
                   </div>
-                  <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                  <p className="text-xs text-theme-secondary mt-1 leading-relaxed">
                     Desktop weather application fetching real-time data via the OpenWeather API —
                     displays temperature, humidity, wind speed, and conditions with input validation and exception handling.
                   </p>
@@ -310,7 +310,7 @@ export default function ResumePage() {
 
                 <div>
                   <div className="flex items-start justify-between gap-2">
-                    <h3 className="text-sm font-semibold text-white">
+                    <h3 className="text-sm font-semibold text-theme-primary">
                       Awesome Python Projects Community
                     </h3>
                     <a
@@ -324,7 +324,7 @@ export default function ResumePage() {
                       GitHub
                     </a>
                   </div>
-                  <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                  <p className="text-xs text-theme-secondary mt-1 leading-relaxed">
                     Open-source Python community project on GitHub — curated hub for Python
                     developers to explore projects, collaborate, and contribute.
                   </p>
@@ -337,8 +337,8 @@ export default function ResumePage() {
               <div className="space-y-3">
                 {achievements.map(a => (
                   <div key={a.id}>
-                    <h3 className="text-sm font-semibold text-white">{a.title}</h3>
-                    <p className="text-xs text-slate-300 mt-0.5 leading-relaxed">{a.description}</p>
+                    <h3 className="text-sm font-semibold text-theme-primary">{a.title}</h3>
+                    <p className="text-xs text-theme-secondary mt-0.5 leading-relaxed">{a.description}</p>
                   </div>
                 ))}
               </div>
