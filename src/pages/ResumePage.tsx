@@ -148,7 +148,7 @@ export default function ResumePage() {
               </div>
 
               {/* Contact row */}
-              <div className="flex flex-wrap gap-x-5 gap-y-2 mt-5 text-sm">
+              <div className="flex flex-wrap gap-x-4 gap-y-2 mt-5 text-sm">
                 <a
                   href={`mailto:${profile.contact.email}`}
                   className="flex items-center gap-1.5 text-theme-secondary hover:text-violet-400 transition-colors"
@@ -287,9 +287,9 @@ export default function ResumePage() {
             <ResumeSection title="Key Projects">
               <div className="space-y-4">
                 <div>
-                  <div className="flex items-start justify-between gap-2">
+                  <div className="flex flex-wrap items-start justify-between gap-x-2 gap-y-1">
                     <h3 className="text-sm font-semibold text-theme-primary">Expense Tracker Application</h3>
-                    <span className="text-xs text-theme-subtle flex-shrink-0">Python · Tkinter · SQLite · Matplotlib</span>
+                    <span className="text-xs text-theme-subtle">Python · Tkinter · SQLite · Matplotlib</span>
                   </div>
                   <p className="text-xs text-theme-secondary mt-1 leading-relaxed">
                     GUI-based expense management application with full CRUD operations, SQLite data storage,
@@ -298,9 +298,9 @@ export default function ResumePage() {
                 </div>
 
                 <div>
-                  <div className="flex items-start justify-between gap-2">
+                  <div className="flex flex-wrap items-start justify-between gap-x-2 gap-y-1">
                     <h3 className="text-sm font-semibold text-theme-primary">Weather Application</h3>
-                    <span className="text-xs text-theme-subtle flex-shrink-0">Python · Tkinter · OpenWeather API</span>
+                    <span className="text-xs text-theme-subtle">Python · Tkinter · OpenWeather API</span>
                   </div>
                   <p className="text-xs text-theme-secondary mt-1 leading-relaxed">
                     Desktop weather application fetching real-time data via the OpenWeather API —
@@ -309,7 +309,7 @@ export default function ResumePage() {
                 </div>
 
                 <div>
-                  <div className="flex items-start justify-between gap-2">
+                  <div className="flex flex-wrap items-start justify-between gap-x-2 gap-y-1">
                     <h3 className="text-sm font-semibold text-theme-primary">
                       Awesome Python Projects Community
                     </h3>
@@ -317,7 +317,7 @@ export default function ResumePage() {
                       href="https://github.com/PriyanshMasiyava/awesome-python-projects-community"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-xs text-violet-400 hover:text-violet-300 flex-shrink-0"
+                      className="flex items-center gap-1 text-xs text-violet-400 hover:text-violet-300"
                       aria-label="Awesome Python Projects Community on GitHub (opens in new tab)"
                     >
                       <GithubIcon size={11} />

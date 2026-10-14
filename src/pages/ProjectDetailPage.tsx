@@ -342,19 +342,19 @@ function ProjectDetailContent({ project }: { project: Project }) {
                   Project Info
                 </h3>
                 <dl className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <dt className="text-theme-subtle">Status</dt>
+                  <div className="flex items-center justify-between gap-2">
+                    <dt className="text-theme-subtle flex-shrink-0">Status</dt>
                     <dd>
                       <StatusBadge status={project.status} />
                     </dd>
                   </div>
-                  <div className="flex justify-between">
-                    <dt className="text-theme-subtle">Category</dt>
-                    <dd className="text-theme-secondary">{project.category}</dd>
+                  <div className="flex items-center justify-between gap-2">
+                    <dt className="text-theme-subtle flex-shrink-0">Category</dt>
+                    <dd className="text-theme-secondary text-right">{project.category}</dd>
                   </div>
                   {project.completionDate && (
-                    <div className="flex justify-between">
-                      <dt className="text-theme-subtle">Year</dt>
+                    <div className="flex items-center justify-between gap-2">
+                      <dt className="text-theme-subtle flex-shrink-0">Year</dt>
                       <dd className="text-theme-secondary">{project.completionDate}</dd>
                     </div>
                   )}

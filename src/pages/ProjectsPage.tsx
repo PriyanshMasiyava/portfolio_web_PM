@@ -272,7 +272,7 @@ export default function ProjectsPage() {
             {/* Search row */}
             <div className="flex flex-col sm:flex-row gap-3">
               {/* Search input */}
-              <div className="relative flex-1">
+              <div className="relative flex-1 min-w-0">
                 <Search
                   size={16}
                   className="absolute left-3 top-1/2 -translate-y-1/2 text-theme-subtle pointer-events-none"
@@ -280,7 +280,7 @@ export default function ProjectsPage() {
                 />
                 <input
                   type="search"
-                  placeholder="Search by title, technology, description…"
+                  placeholder="Search by title, technology…"
                   value={query}
                   onChange={e => setQuery(e.target.value)}
                   className="input-field pl-9 pr-9"
@@ -297,49 +297,52 @@ export default function ProjectsPage() {
                 )}
               </div>
 
-              {/* Sort select */}
-              <div className="relative">
-                <select
-                  value={sort}
-                  onChange={e => setSort(e.target.value as SortOption)}
-                  className="input-field pr-8 appearance-none cursor-pointer min-w-[160px]"
-                  aria-label="Sort projects"
-                >
-                  <option value="featured">Sort: Featured First</option>
-                  <option value="az">Sort: A → Z</option>
-                  <option value="za">Sort: Z → A</option>
-                  <option value="date-desc">Sort: Newest First</option>
-                </select>
-                <ChevronDown
-                  size={14}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-theme-subtle pointer-events-none"
-                  aria-hidden="true"
-                />
-              </div>
+              {/* Sort + Tech filter row on mobile */}
+              <div className="flex gap-3">
+                {/* Sort select */}
+                <div className="relative flex-1 sm:flex-none">
+                  <select
+                    value={sort}
+                    onChange={e => setSort(e.target.value as SortOption)}
+                    className="input-field pr-8 appearance-none cursor-pointer w-full sm:min-w-[160px]"
+                    aria-label="Sort projects"
+                  >
+                    <option value="featured">Featured First</option>
+                    <option value="az">A → Z</option>
+                    <option value="za">Z → A</option>
+                    <option value="date-desc">Newest First</option>
+                  </select>
+                  <ChevronDown
+                    size={14}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-theme-subtle pointer-events-none"
+                    aria-hidden="true"
+                  />
+                </div>
 
-              {/* Tech filter toggle */}
-              <button
-                onClick={() => setShowTechFilter(prev => !prev)}
-                className={`flex items-center gap-2 px-4 py-3 rounded-lg border text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500 ${
-                  showTechFilter || activeTechs.length > 0
-                    ? 'border-violet-500/60 text-violet-400 bg-violet-500/10'
-                    : 'border-theme text-theme-muted hover:border-violet-500/40 hover:text-theme-secondary bg-theme-card'
-                }`}
-                aria-expanded={showTechFilter}
-                aria-label="Toggle technology filters"
-              >
-                <SlidersHorizontal size={15} />
-                Technologies
-                {activeTechs.length > 0 && (
-                  <span className="ml-1 w-5 h-5 rounded-full bg-violet-500 text-white text-xs flex items-center justify-center font-bold">
-                    {activeTechs.length}
-                  </span>
-                )}
-              </button>
+                {/* Tech filter toggle */}
+                <button
+                  onClick={() => setShowTechFilter(prev => !prev)}
+                  className={`flex items-center gap-2 px-4 py-3 rounded-lg border text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500 whitespace-nowrap flex-shrink-0 ${
+                    showTechFilter || activeTechs.length > 0
+                      ? 'border-violet-500/60 text-violet-400 bg-violet-500/10'
+                      : 'border-theme text-theme-muted hover:border-violet-500/40 hover:text-theme-secondary bg-theme-card'
+                  }`}
+                  aria-expanded={showTechFilter}
+                  aria-label="Toggle technology filters"
+                >
+                  <SlidersHorizontal size={15} />
+                  <span className="hidden sm:inline">Technologies</span>
+                  {activeTechs.length > 0 && (
+                    <span className="w-5 h-5 rounded-full bg-violet-500 text-white text-xs flex items-center justify-center font-bold">
+                      {activeTechs.length}
+                    </span>
+                  )}
+                </button>
+              </div>
             </div>
 
             {/* Category pills */}
-            <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
+            <div className="filter-pill-row flex flex-wrap gap-2" role="group" aria-label="Filter by category">
               {allCategories.map(cat => (
                 <FilterPill
                   key={cat}

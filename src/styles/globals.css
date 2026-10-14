@@ -65,6 +65,8 @@
 
   html {
     scroll-behavior: smooth;
+    /* Prevent horizontal overflow at every viewport width */
+    overflow-x: hidden;
   }
 
   body {
@@ -72,6 +74,9 @@
     color: var(--text-primary);
     @apply font-sans antialiased;
     transition: background-color 0.2s ease, color 0.2s ease;
+    /* Guard against any element accidentally causing a horizontal scrollbar */
+    overflow-x: hidden;
+    min-width: 320px;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -181,3 +186,26 @@
 ::-webkit-scrollbar-track { background: var(--bg-page); }
 ::-webkit-scrollbar-thumb { background: #8B5CF6; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #7c3aed; }
+
+/* ─── Responsive utilities ──────────────────────────────────────────────────── */
+
+/* Ensure images never overflow their container */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Filter pill rows: allow horizontal scroll on very small screens instead of
+   wrapping into an unusable pile, while still wrapping on wider screens. */
+@media (max-width: 479px) {
+  .filter-pill-row {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .filter-pill-row::-webkit-scrollbar {
+    display: none;
+  }
+}

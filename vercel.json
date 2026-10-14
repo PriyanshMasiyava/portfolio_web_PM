@@ -1,4 +1,5 @@
 {
+  "name": "priyansh-portfolio",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]

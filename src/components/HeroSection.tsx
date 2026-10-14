@@ -47,13 +47,13 @@ function CodePanel() {
           <div className="w-3 h-3 rounded-full bg-red-500/70" />
           <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
           <div className="w-3 h-3 rounded-full bg-green-500/70" />
-          <div className="flex items-center gap-2 ml-3 text-xs text-slate-500 font-mono">
-            <Terminal size={12} />
+          <div className="flex items-center gap-2 ml-3 text-xs text-slate-500 font-mono truncate">
+            <Terminal size={12} className="flex-shrink-0" />
             priyansh_portfolio.py
           </div>
         </div>
         {/* Code */}
-        <div className="p-5 font-mono text-sm leading-7 select-none">
+        <div className="p-4 sm:p-5 font-mono text-xs sm:text-sm leading-6 sm:leading-7 select-none overflow-x-auto">
           <div>
             <span className="text-violet-400">class </span>
             <span className="text-teal-400">Developer</span>
@@ -121,17 +121,17 @@ export default function HeroSection() {
       </div>
 
       <div className="section-container relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-8 items-center">
           {/* Left — Copy */}
           <div className="space-y-6 animate-fade-in">
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/30 text-violet-400 text-xs font-semibold tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/30 text-violet-400 text-xs font-semibold tracking-widest uppercase max-w-full">
               {profile.eyebrow}
             </div>
 
             {/* Main heading */}
             <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-theme-primary">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-theme-primary">
                 {profile.name.split(' ')[0]}, I'm{' '}
                 <br className="hidden sm:block" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-teal-400">
