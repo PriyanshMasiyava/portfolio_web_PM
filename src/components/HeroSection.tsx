@@ -132,10 +132,10 @@ export default function HeroSection() {
             {/* Main heading */}
             <div className="space-y-2">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-theme-primary">
-                {profile.name.split(' ')[0]}, I'm{' '}
+                Hi, I'm{' '}
                 <br className="hidden sm:block" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-teal-400">
-                  {profile.name.split(' ').slice(1).join(' ')}
+                  {profile.name}
                 </span>
               </h1>
               <h2 className="text-xl sm:text-2xl font-semibold text-theme-secondary">

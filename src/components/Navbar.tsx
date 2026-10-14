@@ -17,7 +17,17 @@ function NavLink({
   to: string
   onClick?: () => void
 }) {
+  // Anchor-only links (#section) — native <a> for same-page scroll
   if (to.startsWith('#')) {
+    return (
+      <a href={to} className={linkClass} onClick={onClick}>
+        {label}
+      </a>
+    )
+  }
+  // Cross-page anchor links (/#section) — native <a> so the browser handles
+  // the hash scroll after navigation instead of React Router stripping it
+  if (to.startsWith('/#')) {
     return (
       <a href={to} className={linkClass} onClick={onClick}>
         {label}

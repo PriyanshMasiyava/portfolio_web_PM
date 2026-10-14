@@ -73,15 +73,10 @@ export default function Footer() {
                 const to = navTo(item.anchor)
                 return (
                   <li key={item.anchor}>
-                    {to.startsWith('#') ? (
-                      <a href={to} className="text-sm text-theme-subtle hover:text-theme-secondary transition-colors">
-                        {item.label}
-                      </a>
-                    ) : (
-                      <Link to={to} className="text-sm text-theme-subtle hover:text-theme-secondary transition-colors">
-                        {item.label}
-                      </Link>
-                    )}
+                    {/* Use native <a> for all anchor links so browsers handle hash scroll */}
+                    <a href={to} className="text-sm text-theme-subtle hover:text-theme-secondary transition-colors">
+                      {item.label}
+                    </a>
                   </li>
                 )
               })}

@@ -6,7 +6,7 @@ export const experiences: Experience[] = [
     role: 'Python Programming Intern',
     company: 'Oasis Infobyte',
     location: 'New Delhi, India',
-    duration: 'June 2026 – July 2026',
+    duration: 'June 2024 – July 2024',
     responsibilities: [
       'Designed and developed Python applications using Object-Oriented Programming (OOP), file handling, and GUI concepts.',
       'Built multiple hands-on projects to gain practical experience in Python programming and software development.',

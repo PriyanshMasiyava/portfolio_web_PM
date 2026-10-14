@@ -33,7 +33,7 @@ export interface Experience {
   id: string
   role: string
   company: string
-  location: string
+  location?: string
   duration: string
   responsibilities: string[]
 }
@@ -45,7 +45,7 @@ export interface Education {
   duration: string
   location: string
   status: 'In Progress' | 'Completed'
-  cgpa: string
+  cgpa?: string
 }
 
 export interface Achievement {
