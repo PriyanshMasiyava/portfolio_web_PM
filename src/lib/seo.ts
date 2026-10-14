@@ -13,13 +13,8 @@
  * Once that file exists, set OG_IMAGE_PATH to '/images/og-preview.png'.
  */
 
-// ─────────────────────────────────────────────────────────────────────────────
-// DEPLOYMENT NOTE: Replace SITE_URL with your actual Vercel production URL.
-// Example: 'https://priyansh-portfolio.vercel.app'
-// Until it is set, canonical links and OG absolute URLs are omitted.
-// ─────────────────────────────────────────────────────────────────────────────
-export const SITE_URL = '' // ← paste your real Vercel URL here, e.g. 'https://priyansh-portfolio.vercel.app'
-export const OG_IMAGE_PATH = '' // ← set to '/images/og-preview.png' when the file exists
+export const SITE_URL = 'https://prortfolio-priyansh.vercel.app'
+export const OG_IMAGE_PATH = '' // ← set to '/images/og-preview.png' when an OG image is added to public/images/
 
 export const SITE_AUTHOR = 'Priyansh Masiyava'
 export const TWITTER_HANDLE = '' // ← set to '@yourhandle' when available
